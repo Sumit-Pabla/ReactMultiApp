@@ -27,15 +27,15 @@ function Dictionary() {
             });
             const allDef = [];
             newTerm?.entries[0]?.lexemes[0]?.senses.map(sense => {
-                console.log(sense.definition)
-                console.log(`test test ${sense}`)
-                //return setDefinitions([...definitions, sense.definition])
+
+                
+
                 allDef.push(sense.definition)
-                return 1
+                
             })
             setCounter(counter+1)
             setDefinitions([...definitions, ...allDef])
-            console.log(`The counter is ${counter} and the value for state is ${definitions}`)
+            console.log(`${definitions}`)
     }
     else{
         alert("Enter a term to search for")
@@ -59,11 +59,15 @@ function Dictionary() {
                     }}/>
                 </Col>
                 <Col md={{span:3}}>
-                    <Button onClick={getTerm} variant="secondary"                     
-                    className={(counter<6)?"":'disabled'} attr={(counter<6)?"":'disabled'}
->
-                        Search
-                    </Button>
+
+
+                {
+                    (counter<6) ? 
+                    <Button onClick={getTerm} variant="secondary"> Search </Button>
+                    : 
+                    <Button onClick={getTerm} variant="secondary" disabled> Search </Button>
+                }
+                   
                 </Col>
 
                 {  definitions.length<1 ? 
