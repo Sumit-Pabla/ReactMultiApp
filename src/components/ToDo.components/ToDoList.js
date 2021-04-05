@@ -12,8 +12,8 @@ const ToDoList = ({list, showAdd, addTask, newTask, updateInput, tasks, onDelete
             <Card.Footer style={{padding:10}}>
                 <input text="New" onChange={(e) => {
                     setTextToDo(e.target.value)
-                }} placeHolder="New ToDo Item"/>
-                <input text="ID" placeHolder="ID" style={{marginLeft: "50px", width:"10%"}}
+                }} placeholder="New ToDo Item"/>
+                <input text="ID" placeholder="ID" style={{marginLeft: "50px", width:"10%"}}
                 onChange={(e) => {
                     setIdToDo(e.target.value)
                 }}/>
